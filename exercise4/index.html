@@ -1,1 +1,44 @@
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 4</title>
+    <link rel="stylesheet" href="stylesheet.css" type="text/css">
+    <style>
+      input {
+        display: block;
+        margin: 8px 0;
+        padding: 2px;
+        width: 480px;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet nibh praesent tristique magna sit. Et malesuada fames ac turpis egestas maecenas pharetra. Sit amet cursus sit amet dictum sit amet justo donec. Faucibus vitae aliquet nec ullamcorper sit. Nullam vehicula ipsum a arcu cursus. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Orci sagittis eu volutpat odio facilisis mauris sit amet massa. Odio morbi quis commodo odio aenean sed adipiscing diam donec. Pellentesque sit amet porttitor eget dolor morbi non arcu. Orci dapibus ultrices in iaculis nunc sed augue. Eget nullam non nisi est sit. Nibh sit amet commodo nulla facilisi nullam vehicula. Magna fringilla urna porttitor rhoncus dolor purus non enim praesent. Morbi quis commodo odio aenean sed adipiscing diam.</p>
+    <fieldset>
+      <legend>Border</legend>
+      <input type="number" id="border-red" placeholder="red (0-255)" min="0" max="255" value="0">
+      <input type="number" id="border-green" placeholder="green (0-255)" min="0" max="255" value="0">
+      <input type="number" id="border-blue" placeholder="blue (0-255)" min="0" max="255" value="0">
+      <input type="number" id="border-width" placeholder="width" value="1">
+    </fieldset>
+    <fieldset>
+      <legend>Background Color</legend>
+      <input type="number" id="bc-red" placeholder="red (0-255)" min="0" max="255" value="255">
+      <input type="number" id="bc-green" placeholder="green (0-255)" min="0" max="255" value="255">
+      <input type="number" id="bc-blue" placeholder="blue (0-255)" min="0" max="255" value="255">
+    </fieldset>
+    <input type="button" id="button" value="Update">
+    <script>
+      const $ = a => document.getElementById(a);
+      const v = a => $(a).value;
+      const change = () => {
+        const p = $('paragraph');
+        p.style.border = `${v('border-width')}px solid rgb(${v('border-red')},${v('border-green')},${v('border-blue')})`;
+        p.style.backgroundColor = `rgb(${v('bc-red')},${v('bc-green')},${v('bc-blue')})`;
+      };
+      $('button').addEventListener('click', change);
+      change();
+    </script>
+  </body>
+</html>
