@@ -1,1 +1,26 @@
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Exercise 1</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <form>
+      <input type="password" id="password" name="password" placeholder="password">
+      <br>
+      <input type="password" id="verifyPassword" name="verifyPassword" placeholder="repeat password">
+      <br>
+      <p id="message"></p>
+      <input type="button" id="validate" value="Validate">
+    </form>
+    
+    <script>
+      const $ = a => document.getElementById(a);
+      $('validate').addEventListener('click', () => {
+        const { value: v1 } = $('password');
+        const { value: v2 } = $('verifyPassword');
+        $('message').innerText = v1.length < 8 ? 'the passwords are not at least 8 characters long' : (v1 !== v2 ? 'the passwords entered don\'t match' : 'passwords are valid');
+      });
+    </script>
+  </body>
+</html>
