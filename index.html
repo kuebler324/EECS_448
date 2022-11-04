@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 5 - Home Page</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      html, body {
+        width: 100%;
+        height: 100%;
+        background-color: #121212;
+        overflow: hidden;
+      }
+      .paper-container {
+        display: block;
+        margin: 128px auto 0 auto;
+        border-radius: 50%;
+        padding: 4px;
+        width: 400px;
+        height: 400px;
+        background-image: radial-gradient(circle, #ff0, #93f, #121212, #121212);
+        background-size: 200px 200px;
+
+        animation: paper 4s linear infinite;
+      }
+      @keyframes paper {
+        0% {
+          background-position: -100px -100px;
+        }
+        25% {
+          background-position: 300px -100px;
+        }
+        50% {
+          background-position: 300px 300px;
+        }
+        75% {
+          background-position: -100px 300px;
+        }
+        100% {
+          background-position: -100px -100px;
+        }
+      }
+      .paper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: middle;
+        
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        background-color: #212121;
+      }
+      h1, a {
+        display: block;
+        width: 100%;
+        height: 48px;
+        line-height: 48px;
+        font-family: verdana;
+        text-align: center;
+        text-decoration: none;
+        transition: 300ms ease-in-out;
+        color: #fff;
+      }
+      a:hover {
+        color: #93f;
+        animation: rotate 500ms linear infinite;
+        
+      }
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        25% {
+          transform: rotate(2deg);
+        }
+        50% {
+          transform: rotate(0deg);
+        }
+        75% {
+          transform: rotate(-2deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+      h1 {
+        font-size: 18px;
+        
+        
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 100px 100px;
+        background-image: linear-gradient(90deg, #93f, #ff0, #93f);
+        animation: text-gradient 8s linear infinite, rotate 500ms linear infinite;
+
+      }
+      @keyframes text-gradient {
+        0% {
+          background-position: 0px 0px;
+        }
+        50% {
+          background-position: 200px 0px;
+        }
+        100% {
+          background-position: 0px 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="paper-container">
+      <div class="paper">
+        <h1>EECS 448 Lab 5</h1>
+        <a href="exercise1">Exercise 1</a>
+        <a href="exercise2">Exercise 2</a>
+        <a href="exercise3">Exercise 3</a>
+        <a href="exercise4">Exercise 4</a>
+      </div>
+    </div>
+  </body>
+</html>
