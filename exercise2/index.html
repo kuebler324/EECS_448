@@ -1,1 +1,36 @@
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Exercise 2</title>
+    <meta charset="utf-8">
+    <style>
+      #slideshow {
+        width: 240px;
+        height: 360px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button id="prev">Previous</button>
+      <button id="next">Next</button>
+      <img id="slideshow">
+    </div>
+    
+    <script>
+      const hrefs = ['turtle.jpg', 'mort.jpg', 'mort2.jpg', 'mort3.jpg', 'mort4.jpg'];
+      const $ = a => document.getElementById(a);
+      let index = 0;
+      const alter = change => {
+        index = (5 + index + change) % 5;
+        $('slideshow').setAttribute('src', hrefs[index]);
+        
+      };
+      $('prev').addEventListener('click', () => alter(-1));
+      $('next').addEventListener('click', () => alter(1));
+      alter(0);
+      
+      
+    </script>
+  </body>
+</html>
